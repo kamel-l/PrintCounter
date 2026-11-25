@@ -1,4 +1,3 @@
-
 package com.printcounter
 
 import com.facebook.react.ReactPackage
@@ -10,15 +9,9 @@ class CameraPreviewPackage : ReactPackage {
 
     override fun createNativeModules(
         reactContext: ReactApplicationContext
-    ): List<NativeModule> {
-        return emptyList()
-    }
+    ): List<NativeModule> = emptyList()
 
     override fun createViewManagers(
         reactContext: ReactApplicationContext
-    ): List<ViewManager<*, *>> {
-        return listOf(
-            CameraPreviewManager()
-        )
-    }
+    ): List<ViewManager<*, *>> = listOf(CameraPreviewManager())
 }

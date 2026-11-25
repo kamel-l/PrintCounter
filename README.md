@@ -96,3 +96,19 @@ To learn more about React Native, take a look at the following resources:
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
 # PrintCounter
+
+
+metro
+ npx react-native start --reset-cache
+
+ adb reverse tcp:8081 tcp:8081
+
+
+adb logcat -c
+adb shell am force-stop com.printcounter
+adb shell monkey -p com.printcounter 1
+
+.\gradlew.bat app:assembleDebug
+
+cd ..
+adb install -r .\android\app\build\outputs\apk\debug\app-debug.apk

@@ -1,4 +1,3 @@
-
 package com.printcounter
 
 import android.app.Application

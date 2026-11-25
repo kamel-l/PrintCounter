@@ -1,27 +1,21 @@
-
 package com.printcounter
 
-import com.facebook.react.common.MapBuilder
 import com.facebook.react.uimanager.SimpleViewManager
 import com.facebook.react.uimanager.ThemedReactContext
 
 class CameraPreviewManager :
     SimpleViewManager<CameraPreview>() {
 
-    override fun getName(): String {
-        return "CameraPreview"
-    }
+    override fun getName(): String = "CameraPreview"
 
     override fun createViewInstance(
         reactContext: ThemedReactContext
-    ): CameraPreview {
-        return CameraPreview(reactContext)
-    }
+    ): CameraPreview = CameraPreview(reactContext)
 
     override fun getExportedCustomDirectEventTypeConstants(): MutableMap<String, Any> {
-        return MapBuilder.of(
-            "topMarkDetected",
-            MapBuilder.of("registrationName", "onMarkDetected")
-        )
+        val events: MutableMap<String, Any> = HashMap()
+        events["topMarkDetected"] = mapOf("registrationName" to "onMarkDetected")
+        events["topCameraError"]  = mapOf("registrationName" to "onCameraError")
+        return events
     }
 }
