@@ -97,8 +97,8 @@ class CameraPreview(context: Context) : FrameLayout(context) {
 
     init {
         addView(previewView)
-        layerType = View.LAYER_TYPE_HARDWARE
-        previewView.layerType = View.LAYER_TYPE_HARDWARE
+        setLayerType(View.LAYER_TYPE_HARDWARE, null)
+        previewView.setLayerType(View.LAYER_TYPE_HARDWARE, null)
         previewView.addOnLayoutChangeListener(onPreviewLayoutChange)
     }
 
